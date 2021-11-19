@@ -267,36 +267,54 @@ button {
     }
 }
 #footer {
-    margin-top: 100px;
-    padding: 50px 0;
+    margin-top: 40px;
+    padding: 50px 0 70px;
     background-color: $light-gray-color;
+    position: relative;
     .contents {
-        width: 1440px;
-        margin: auto;
-        position: relative;
         font-size: $normal-size;
+        padding: 0 20px;
         .addressBox {
             color: #999;
             .logo {
                 margin-bottom: 30px;
+                img {
+                    height: 30px;
+                }
             }
             address {
-                .info * {
-                    margin-right: 10px;
+                .info {
+                    a {
+                        display: flex;
+                        height: 40px;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: $text-color;
+                        color: $white-color;
+                        border-radius: 100px;
+                        margin-top: 20px;
+                    }
+                    span {
+                        display: block;
+                        margin: 5px 0;
+                    }
                 }
                 .copyright {
-                    margin-top: 20px;
+                    position: absolute;
+                    bottom: 20px;
+                    font-size: $small-size;
                 }
             }
         }
         .link {
-            position: absolute;
-            right: 0;
-            top: 0;
+            display: flex;
+            height: 40px;
             border-radius: 100px;
-            padding: 10px 20px;
             background-color: $text-color;
             color: $white-color;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
         }
     }
 }

@@ -1,7 +1,7 @@
 const mainVisualSlider = new Swiper("#mainVisual", {
     autoplay: true,
     speed: 1000,
-    effect: "fade",
+    effect: "cube",
     loop: true,
     pagination: {
         el: "#mainVisual .pagination",
@@ -9,14 +9,30 @@ const mainVisualSlider = new Swiper("#mainVisual", {
         clickable: true,
     },
 });
+// const newsSlider = new Swiper("#news .contents", {
+//     loop: true,
+//     spaceBetween: 10,
+//     slidesPerView: 2,
+//     centeredSlides: true,
+// });
+
+const nwswSlider = new Swiper("#news .contents", {
+    slidesPerView: "auto",
+    centeredSlides: true,
+    spaceBetween: 20,
+});
 
 const productSlider = new Swiper("#product .list", {
     speed: 600,
-    slidesPerView: 3, //화면에 보여지는 갯수
-    slidesPerGroup: 3, //묶음
+    slidesPerView: 1, //화면에 보여지는 갯수
+    // slidesPerGroup: 3, //묶음
     navigation: {
         prevEl: "#product .prev",
         nextEl: "#product .next",
+    },
+    scrollbar: {
+        el: ".scroll",
+        draggable: true,
     },
 });
 
