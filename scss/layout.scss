@@ -41,17 +41,17 @@ button {
     }
     #logo {
         position: absolute;
-        left: 50px;
+        left: 20px;
         a {
             display: flex;
-            height: 100px;
+            height: 50px;
             align-items: center;
             .color {
                 display: none;
             }
         }
         img {
-            height: 20px;
+            height: 24px;
         }
     }
     #gnb {
@@ -60,6 +60,12 @@ button {
         height: 100%;
         background-color: $white-color;
         padding-top: 80px;
+        left: 100%;
+        transition: 0.5s;
+        z-index: 2;
+        &.on {
+            left: 0;
+        }
         .list {
             > li {
                 padding: 0 20px;
@@ -101,25 +107,30 @@ button {
                 }
             }
         }
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
     }
     .etc {
-        .item:hover {
-            button {
-                color: $hover-color;
-                border: 1px solid #eee;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-                background-color: #fff;
-            }
-            ul {
-                display: block;
-                margin-top: -5px;
-                border: 1px solid #eee;
-                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-                li:hover {
-                    color: $hover-color;
-                }
-            }
-        }
+        // .item:hover {
+        //     button {
+        //         color: $hover-color;
+        //         border: 1px solid #eee;
+        //         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        //         background-color: #fff;
+        //     }
+        //     ul {
+        //         display: block;
+        //         margin-top: -5px;
+        //         border: 1px solid #eee;
+        //         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+        //         li:hover {
+        //             color: $hover-color;
+        //         }
+        //     }
+        // }
         button {
             width: 80px;
             height: 50px;
@@ -143,6 +154,7 @@ button {
             //transition: 0.25s ease;
         }
         .sns {
+            margin-top: 50px;
             ul {
                 display: flex;
                 padding: 0 20px;
@@ -183,9 +195,10 @@ button {
                         left: 50%;
                         top: 50%;
                         transform: translate(-50%, -50%);
-                        background-image: url("../images/layout/utility.png");
+                        background-image: url("../images/layout/m_utility.png");
+                        background-size: 250px;
                         @include pseudo();
-                        @include box(32px, 18px);
+                        @include box(50px);
                     }
                 }
                 &:nth-child(1) a:before {
@@ -205,11 +218,51 @@ button {
                 }
             }
         }
-        .language ul {
-            padding: 20px 0;
-            li a {
-                padding: 10px 0 10px 30px;
+        .language {
+            width: 100px;
+            margin: 30px auto 0;
+            border: 2px solid $main-color;
+            border-radius: 100px;
+            padding: 0 20px;
+            overflow: hidden;
+            ul {
+                display: flex;
+                justify-content: center;
+                padding: 0;
+                li {
+                    position: relative;
+                    &:nth-child(2)::before {
+                        content: "/";
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        left: -5px;
+                        transform: translateY(-50%);
+                    }
+                    a {
+                        padding: 10px 20px;
+                    }
+                }
             }
+        }
+    }
+    .all {
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 5px 0;
+        box-sizing: border-box;
+        span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: $white-color;
         }
     }
 }
